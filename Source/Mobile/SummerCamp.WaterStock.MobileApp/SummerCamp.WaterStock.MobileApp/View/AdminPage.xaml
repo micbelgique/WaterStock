@@ -1,0 +1,117 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SummerCamp.WaterStock.MobileApp.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ViewModel="using:SummerCamp.WaterStock.MobileApp.ViewModel"
+    xmlns:tools="using:SummerCamp.WaterStock.MobileApp.Tools"
+    x:Class="SummerCamp.WaterStock.MobileApp.View.AdminPage"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <tools:BooleanToVisibilityConverter x:Key="boolvisconverter"/>
+    </Page.Resources>
+    <Page.DataContext>
+        <ViewModel:AdminViewModel/>
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Pivot Style="{StaticResource Pivotonbackbutton}">
+            <PivotItem >
+                <PivotItem.Header>
+                    <TextBlock Text="User" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                </PivotItem.Header>
+                <Hub >
+                    <HubSection Header="Users">
+                        <DataTemplate>
+                            <Grid>
+                                <GridView ItemsSource="{Binding Users}" ItemClick="GridView_ItemClick" IsItemClickEnabled="True">
+                                    <GridView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VariableSizedWrapGrid Orientation="Vertical"/>
+                                        </ItemsPanelTemplate>
+                                    </GridView.ItemsPanel>
+                                    <GridView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="350">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="15"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"/>
+                                                    <RowDefinition Height="Auto"/>
+                                                </Grid.RowDefinitions>
+                                                <Rectangle Grid.RowSpan="2" Fill="{Binding CurentBalanceColor}"/>
+                                                <TextBlock Text="{Binding FirstName}" Grid.Column="1" Margin="6,0,0,0"/>
+                                                <TextBlock Text="{Binding LastName}" Margin="6,0,0,0" Grid.Column="2"/>
+                                                <BitmapIcon  Grid.Column="3" UriSource="ms-appx:///Assets/Disabled.png" Width="16" Height="16" HorizontalAlignment="Right" Margin="6,0" Visibility="{Binding IsDisabled, Converter={StaticResource boolvisconverter}}"/>
+
+                                                <TextBlock Text="{Binding Mail}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Margin="6,0,0,0"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridView.ItemTemplate>
+                                </GridView>
+                            </Grid>
+                        </DataTemplate>
+                    </HubSection>
+                    <HubSection Header="Group">
+                        <DataTemplate>
+                            <Grid>
+                                <GridView ItemsSource="{Binding Groups}">
+                                    <GridView.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VariableSizedWrapGrid Orientation="Vertical"/>
+                                        </ItemsPanelTemplate>
+                                    </GridView.ItemsPanel>
+                                    <GridView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Width="250">
+                                                <TextBlock Text="{Binding Name}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </GridView.ItemTemplate>
+                                </GridView>
+                            </Grid>
+                        </DataTemplate>
+                    </HubSection>
+                </Hub>
+            </PivotItem>
+            <PivotItem >
+                <PivotItem.Header>
+                    <TextBlock Text="StorePoints" Style="{StaticResource SubheaderTextBlockStyle}"/>
+                </PivotItem.Header>
+                <Grid>
+                    <GridView ItemsSource="{Binding StorePoints}">
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VariableSizedWrapGrid Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Width="250">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <TextBlock Text="{Binding Name}"/>
+
+                                    <TextBlock Text="{Binding QuantityUsedFormatted}" Grid.Column="1" HorizontalAlignment="Right"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                    </GridView>
+                </Grid>
+            </PivotItem>
+        </Pivot>
+
+        <Button Margin="0,5,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource NavigationBackButtonNormalStyle}" Tapped="Button_Tapped" />
+
+
+
+    </Grid>
+</Page>

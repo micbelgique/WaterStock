@@ -1,0 +1,67 @@
+﻿@model List<SummerCamp.WaterStock.Web.Models.BadgeModels>
+
+@{
+    ViewBag.Title = "Badges list";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Badges list</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="active">
+                <strong>Badges list</strong>
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>
+<div class="wrapper wrapper-content animated fadeInRight ecommerce">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-content">
+                    <table class="footable table table-stripped toggle-arrow-tiny default breakpoint footable-loaded" data-page-size="15">
+                        <thead>
+                            <tr>
+                                <th data-toggle="true" class="footable-visible footable-first-column footable-sortable">Reference <span class="footable-sort-indicator"></span></th>
+                                <th class="text-right footable-visible footable-last-column" data-sort-ignore="true">Action</th>
+                            </tr>
+                        </thead>
+                        @if (Model.Count > 0)
+                        {
+                            <tbody>
+                                @foreach (SummerCamp.WaterStock.Web.Models.BadgeModels item in Model)
+                                {
+                                    <tr class="footable-even" style="display: table-row;">
+                                        <td class="footable-visible footable-first-column">
+                                            @item.Reference
+                                        </td>
+                                        <td class="text-right footable-visible footable-last-column">
+                                            <div class="btn-group">
+                                                <button class="btn-white btn btn-xs">View</button>
+                                                <button class="btn-white btn btn-xs">Edit</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        }
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $('.footable').footable();
+        });
+    </script>
+}

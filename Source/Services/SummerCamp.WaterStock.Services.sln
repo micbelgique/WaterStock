@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummerCamp.WaterStock.Services", "SummerCamp.WaterStock.Services\SummerCamp.WaterStock.Services.csproj", "{BD4C6CE8-C821-445B-B83F-8C7FACD5267A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SummerCamp.WaterStock.Services.Tests", "SummerCamp.WaterStock.Services.Tests\SummerCamp.WaterStock.Services.Tests.csproj", "{E58E87DD-FEDA-4D82-8502-6B96B7A54208}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1BFD81CF-8C84-4987-899B-99D13C02E997}"
+	ProjectSection(SolutionItems) = preProject
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DbScripts", "DbScripts", "{A83E42D0-EECB-4ABD-A982-5CD86953A345}"
+	ProjectSection(SolutionItems) = preProject
+		CreateAllTables.sql = CreateAllTables.sql
+		Diagram.png = Diagram.png
+		SampleData.sql = SampleData.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD4C6CE8-C821-445B-B83F-8C7FACD5267A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD4C6CE8-C821-445B-B83F-8C7FACD5267A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD4C6CE8-C821-445B-B83F-8C7FACD5267A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD4C6CE8-C821-445B-B83F-8C7FACD5267A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E58E87DD-FEDA-4D82-8502-6B96B7A54208}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E58E87DD-FEDA-4D82-8502-6B96B7A54208}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E58E87DD-FEDA-4D82-8502-6B96B7A54208}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E58E87DD-FEDA-4D82-8502-6B96B7A54208}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A83E42D0-EECB-4ABD-A982-5CD86953A345} = {1BFD81CF-8C84-4987-899B-99D13C02E997}
+	EndGlobalSection
+EndGlobal

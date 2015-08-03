@@ -1,0 +1,51 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <span>
+                                    <img alt="image" class="img-circle" src="http://www.gravatar.com/avatar/54dad9f14c0abd1e5c0972552b97abc5">
+                                </span>
+                                <br />
+                                <strong class="font-bold">Admin</strong>
+                            </span> <span class="text-muted text-xs block">Option <b class="caret"></b></span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element">
+                    WS
+                </div>
+            </li>
+            <li class="@Html.IsSelected(action: "Home", controller: "StorePoints")">
+                <a href="@Url.Action("Home", "StorePoints")">
+                    <i class="fa fa-wifi"></i>
+                    <span class="nav-label">Store points list</span>
+                </a>
+            </li>           
+            <li class="@Html.IsSelected(action: "Home", controller: "Badges")">
+                <a href="@Url.Action("Home", "Badges")">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="nav-label">Badges list</span>
+                </a>
+            </li>
+            <li class="@Html.IsSelected(action: "Home", controller: "Users")">
+                <a href="@Url.Action("Home", "Users")">
+                    <i class="fa fa-male"></i>
+                    <span class="nav-label">Users list</span>
+                </a>
+            </li>
+            <li class="@Html.IsSelected(action: "Home", controller: "Groups")">
+                <a href="@Url.Action("Home", "Groups")">
+                    <i class="fa fa-group"></i>
+                    <span class="nav-label">Groups list</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
